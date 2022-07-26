@@ -21,7 +21,7 @@ public class NodeList {
         int index; //리스트의 순서
         String[] listArray = {"a", "b", "c"};
 
-        // 첫번째, int size() 구현하기
+        // 첫번째, int size() 사이즈 반환 함수 구현하기
        for (int i = 0; i < 3; i++){
            System.out.println(listArray[i]);
        }
