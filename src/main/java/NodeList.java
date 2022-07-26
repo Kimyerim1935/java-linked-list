@@ -19,7 +19,16 @@ import java.util.*;
 public class NodeList {
     public static void main(String[] args){
         int index; //리스트의 순서
+        String[] listArray = {"a", "b", "c"};
+
+        // 첫번째, int size() 구현하기
+       for (int i = 0; i < 3; i++){
+           System.out.println(listArray[i]);
+       }
+        System.out.println(listArray.length);
+
         List<String> testList = new ArrayList<String>(); // js에서 array.push / array.pop 코드가 있는데 자바에도 있나? 싶어서 찾아봤더니 나온 코드
 
     }
 }
+
