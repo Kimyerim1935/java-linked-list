@@ -1,5 +1,3 @@
-import java.util.*;
-
 //Todo
 
 //       boolean add() {} // 리스트 가장 끝에 항목을 추가
@@ -16,19 +14,30 @@ import java.util.*;
 //       String get(int index)              // 리스트의 index에 해당하는 항목을 추출하며, 제거는 하지 않음
 //       void clear()                       // 현재 리스트를 빈 리스트로 초기화
 
-public class NodeList {
-    public static void main(String[] args){
-        int index; //리스트의 순서
-        String[] listArray = {"a", "b", "c"};
 
-        // 첫번째, int size() 사이즈 반환 함수 구현하기
-       for (int i = 0; i < 3; i++){
-           System.out.println(listArray[i]);
-       }
-        System.out.println(listArray.length);
 
-        List<String> testList = new ArrayList<String>(); // js에서 array.push / array.pop 코드가 있는데 자바에도 있나? 싶어서 찾아봤더니 나온 코드
+class Node {
+    String data;
+}
 
+class NodeList{
+    int index;
+
+    // 리스트 추가 함수
+    boolean add(String element) {
+        Node node = new Node();
+        node.data = element;
+
+        index++;
+        System.out.println(index + node.data);
+        return false;
+    }
+
+    // 리스트 사이즈 추출 함수
+    int size() {
+        System.out.println(index);
+        return index;
     }
 }
 
+//
