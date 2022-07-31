@@ -30,6 +30,7 @@ class Node {
         System.out.println(this.data);
         return this.data;
     }
+
 }
 
 class NodeList {
@@ -73,20 +74,39 @@ class NodeList {
     }
 
     public String remove() {
-        Node cursor = last;
+        Node cursor = first;
 
         if (size == 0) {
             return "삭제할 노드가 없습니다.";
         }
 
-       cursor.data = null;
-        size--;
-         return null;
+        for (int i = 0; i < size; i++) {
+            if (i == size-1) {
+                last = null;
+                size--;
+            }
+            cursor = cursor.next;
+        }
+
+        if (last == null) {
+            cursor = first;
+            for (int j = 0; j < size; j++) {
+                if (j == size-1) {
+                    last = cursor;
+                }
+                cursor = cursor.next;
+                System.out.println("last: " + last.data + last.next);
+            }
+        }
+            last.next = null;
+//        System.out.println(size);
+        return cursor.getData();
     }
+
     // 리스트 사이즈 추출 함수
     int size() {
         if (size == 0) System.out.println("Node를 추가해주세요.");
-        System.out.println(size);
+//        System.out.println(size);
         return size;
     }
 }
