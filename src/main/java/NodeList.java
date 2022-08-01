@@ -74,35 +74,25 @@ class NodeList {
     }
 
     public String remove() {
-        Node cursor = first;
-
         if (size == 0) {
             return "삭제할 노드가 없습니다.";
         }
 
-        for (int i = 0; i < size; i++) {
-            if (i == size-1) {
-                last = null;
-                size--;
-            }
+        //                cursor
+        // first          last
+        // aaa     ->      bbb      ->      null     ->      null
+        // size : 3
+        Node cursor = first;
+        String result = last.getData();
+        for(int i = 0; i < size - 2; i++) {
             cursor = cursor.next;
+            cursor.next = null; // Error
         }
-
-        if (last == null) {
-            cursor = first;
-            for (int j = 0; j < size; j++) {
-                if (j == size-1) {
-                    last = cursor;
-                }
-                cursor = cursor.next;
-                System.out.println("last: " + last.data + last.next);
-            }
-        }
-            last.next = null;
-//        System.out.println(size);
-        return cursor.getData();
+        last = cursor;
+        size--;
+        return result;
     }
-
+    
     // 리스트 사이즈 추출 함수
     int size() {
         if (size == 0) System.out.println("Node를 추가해주세요.");

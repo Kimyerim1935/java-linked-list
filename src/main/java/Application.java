@@ -7,8 +7,10 @@ class Application {
         nodeList.add("ccc");
         nodeList.add("ddd");
         nodeList.add("eee");
-        nodeList.add("fff");
-        nodeList.size();
-        nodeList.remove();
+
+        System.out.println(nodeList.remove());
+        System.out.println(nodeList.size());
+        System.out.println(nodeList.remove());
+        System.out.println(nodeList.size());
     }
 }
