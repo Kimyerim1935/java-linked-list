@@ -1,13 +1,9 @@
 // Todo
 
 //       void add(int index) {} // 리스트의 index에 해당하는 부분에 항목을 추가
-//       void addFirst() {} // 리스트의 가장 끝에 항목을 추가
-//       void addLast(String element)       // 리스트의 가장 끝에 항목을 추가
 //
-//       String remove()                    // 리스트의 가장 끝에서 항목을 추출 및 제거
 //       boolean remove(String element)     // 리스트에서 해당 항목을 찾아 제거
 //       String removeFirst()               // 리스트의 가장 처음 항목을 추출 및 제거
-//       String removeList()                // 리스트의 가장 끝 항목을 추출 및 제거
 //
 //       void clear()                       // 현재 리스트를 빈 리스트로 초기화
 
@@ -54,6 +50,37 @@ class NodeList {
     return true;
   }
 
+  // 리스트의 가장 처음에 항목을 추가
+  void addFirst(String element) {
+    Node firstNode = new Node(element);
+
+    firstNode.data = element;
+    firstNode.next = first;
+
+    first = firstNode;
+
+    size++;
+
+    if(size == 1) {
+      last = firstNode;
+    }
+  }
+
+  // 리스트의 가장 끝에 항목을 추가
+  void addLast(String element) {
+    Node lastAddNode = new Node(element);
+
+    if (first == null) {
+      first = lastAddNode;
+    } else {
+      last.next = lastAddNode;
+    }
+    size++;
+    last = lastAddNode;
+    System.out.println("lastNode ====> " + last.getData());
+  }
+
+
   public String get(int index) {
     Node cursor = first;
 
@@ -94,6 +121,11 @@ class NodeList {
     last = cursor;
 
     return result;
+  }
+
+  // 리스트의 가장 끝 항목을 추출 및 제거
+  String removeList() {
+    return remove();
   }
 
   // 리스트 사이즈 추출 함수
