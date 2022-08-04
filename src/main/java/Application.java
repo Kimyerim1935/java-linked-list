@@ -10,6 +10,7 @@ class Application {
 
         System.out.println("remove= " + nodeList.remove());
         System.out.println("size= " + nodeList.size());
-
+        System.out.println("remove= " + nodeList.remove());
+        System.out.println("size= " + nodeList.size());
     }
 }
