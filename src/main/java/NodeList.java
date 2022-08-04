@@ -69,26 +69,6 @@ class NodeList {
     return cursor.data;
   }
 
-  //    public String remove() {
-  //        if (size == 0) {
-  //            return "삭제할 노드가 없습니다.";
-  //        }
-  //        Node cursor = first;
-  //        String result = last.getData();
-  //        for(int i = 0; i < size - 2; i++) {
-  //            cursor = cursor.next;
-  //            if (i == size-2) {
-  //                cursor.next = null; // Error
-  //            }
-  //        }
-  //        System.out.println("cursor= " + cursor.data + cursor.next);
-  //
-  //        last = cursor;
-  //        size--;
-  //        System.out.println("last= " + last.data + last.next);
-  //        return result;
-  //    }
-
   // 가장 마지막 항목 제거 함수
   public String remove() {
     if (size == 0) {
