@@ -36,6 +36,19 @@ class NodeList {
     this.size = 0;
   }
 
+  void print() {
+    Node cursor = first;
+
+    while (cursor != null){
+      System.out.println("cursor" + cursor.data);
+      cursor = cursor.next;
+    }
+
+    System.out.println("First : " + first.getData());
+    System.out.println("Last : " + last.getData());
+    System.out.println("size: " + size);
+  }
+
   // 리스트 추가 함수
   boolean add(String element) {
     Node node = new Node(element); // 노드 생성
@@ -53,8 +66,6 @@ class NodeList {
   // 리스트의 가장 처음에 항목을 추가
   void addFirst(String element) {
     Node firstNode = new Node(element);
-
-    firstNode.data = element;
     firstNode.next = first;
 
     first = firstNode;
@@ -79,7 +90,6 @@ class NodeList {
     last = lastAddNode;
     System.out.println("lastNode ====> " + last.getData());
   }
-
 
   public String get(int index) {
     Node cursor = first;

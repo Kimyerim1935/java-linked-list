@@ -13,11 +13,13 @@ class Application {
         nodeList.addFirst("aaa");
         nodeList.addFirst("bbb");
         nodeList.addFirst("ccc");
+        nodeList.addFirst("ddd");
         nodeList.addLast("eee");
         nodeList.addLast("fff");
         nodeList.addLast("ggg");
         nodeList.addLast("hhh");
 
+        nodeList.print();
 //        System.out.println("remove= " + nodeList.remove());
 //        System.out.println("size= " + nodeList.size());
 //        System.out.println("remove= " + nodeList.remove());
