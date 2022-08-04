@@ -6,7 +6,6 @@ class Application {
         nodeList.add("bbb"); // (first: [data: AAA, next: [data: BBB, next: null]], size = 2)
         nodeList.add("ccc");
         nodeList.add("ddd");
-        nodeList.add("eee");
 
         System.out.println("remove= " + nodeList.remove());
         System.out.println("size= " + nodeList.size());
