@@ -195,7 +195,26 @@ class NodeList {
 
   // 리스트 초기화 함수
   void clear() {
+
+    if (size == 0) {
+      System.out.println("노드 리스트가 없습니다.");
+      return;
+    }
     Node cursor = first;
 
+    while (cursor.next != null) {
+    cursor.data = null;
+
+    Node nextAddress = cursor.next;
+    cursor = nextAddress;
+    size--;
+    }
+
+    last.data = null;
+    size --;
+
+    System.out.println("in Clear ===== " + cursor.data + cursor.next );
+    System.out.println("firstNode ===> " + first.getData() + "lastNode ===> " + last.getData());
+    System.out.println("size ===> " + size);
   }
 }
